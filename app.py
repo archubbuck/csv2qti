@@ -39,7 +39,7 @@ def main():
 
     logging.info(f'Loading CSV data from {csv_file_path}')
 
-    csv_data = pd.read_csv(csv_file_path)
+    csv_data = pd.read_csv(csv_file_path, encoding="ISO-8859-1", engine="python")
 
     # Process each row in the Pandas DataFrame and store the results
 
@@ -62,7 +62,7 @@ def main():
 
     logging.info(f'Saving markup data to {markup_file_path}')
 
-    with open(markup_file_path, 'w') as fh:
+    with open(markup_file_path, 'w', encoding="ISO-8859-1") as fh:
         fh.write(quiz_questions)
 
     # Create the Quiz object using text2qti
